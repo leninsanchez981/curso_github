@@ -1,90 +1,200 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-    <title>Horario de Clases</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario de Clases Profesional</title>
+    <style>
+        /* Variables de color para un mantenimiento fácil */
+        :root {
+            --bg-body: #f1f5f9;
+            --bg-table: #ffffff;
+            --text-main: #1e293b;
+            --text-muted: #64748b;
+            --primary: #3b82f6;
+            --border-color: #e2e8f0;
+            --receso-bg: #f8fafc;
+            --receso-text: #0f172a;
+        }
+
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-body);
+            color: var(--text-main);
+            margin: 0;
+            padding: 40px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: var(--text-main);
+            margin-bottom: 30px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+        }
+
+        /* Contenedor responsivo para que no se rompa en celulares */
+        .table-container {
+            width: 100%;
+            max-width: 1000px;
+            background: var(--bg-table);
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+            border: 1px solid var(--border-color);
+            overflow: hidden; /* Mantiene los bordes redondeados */
+            overflow-x: auto; /* Activa scroll horizontal si la pantalla es muy chica */
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            text-align: center;
+            min-width: 700px; /* Evita que las columnas se aplasten demasiado */
+        }
+
+        /* Encabezados modernos */
+        th {
+            background-color: var(--primary);
+            color: #ffffff;
+            font-weight: 600;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 0.5px;
+            padding: 16px;
+        }
+
+        /* Estilo de las celdas */
+        td {
+            padding: 14px 16px;
+            border-bottom: 1px solid var(--border-color);
+            font-size: 0.95rem;
+            transition: background-color 0.2s ease;
+        }
+
+        /* Columna de las horas (resaltada sutilmente) */
+        td:first-child {
+            font-weight: 600;
+            color: var(--text-muted);
+            background-color: #f8fafc;
+            border-right: 1px solid var(--border-color);
+            font-size: 0.85rem;
+        }
+
+        /* Filas intercaladas para mejorar la lectura (Efecto Cebra) */
+        tr:nth-child(even) td:not(:first-child) {
+            background-color: #fafafa;
+        }
+
+        /* Efecto hover al pasar el mouse por encima de una fila */
+        tr:hover td:not(:first-child) {
+            background-color: #f0f7ff;
+        }
+
+        /* Estilo especial para la fila de RECESO */
+        .receso-row td {
+            background-color: var(--receso-bg) !important;
+            color: var(--receso-text);
+            font-weight: 700;
+            font-size: 0.9rem;
+            letter-spacing: 3px;
+            border-top: 2px dashed var(--border-color);
+            border-bottom: 2px dashed var(--border-color);
+        }
+
+        /* Colores sutiles para materias clave (opcional, le da un toque profesional) */
+        .materia-highlight {
+            color: var(--primary);
+            font-weight: 500;
+        }
+    </style>
 </head>
 <body>
 
-    <h1 align="center">Horario de Clases</h1>
+    <h1>Horario de Clases</h1>
 
-    <table border="1" align="center" cellpadding="10">
-        <tr>
-            <th>Hora</th>
-            <th>Lunes</th>
-            <th>Martes</th>
-            <th>Miércoles</th>
-            <th>Jueves</th>
-            <th>Viernes</th>
-        </tr>
+    <div class="table-container">
+        <table>
+            <thead>
+                <tr>
+                    <th>Hora</th>
+                    <th>Lunes</th>
+                    <th>Martes</th>
+                    <th>Miércoles</th>
+                    <th>Jueves</th>
+                    <th>Viernes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>07:00 - 08:00</td>
+                    <td>Matemáticas</td>
+                    <td class="materia-highlight">Programación</td>
+                    <td>Matemáticas</td>
+                    <td class="materia-highlight">Programación</td>
+                    <td>Inglés</td>
+                </tr>
+                <tr>
+                    <td>08:00 - 09:00</td>
+                    <td>Física</td>
+                    <td>Base de Datos</td>
+                    <td>Física</td>
+                    <td>Base de Datos</td>
+                    <td>Historia</td>
+                </tr>
+                <tr>
+                    <td>09:00 - 10:00</td>
+                    <td class="materia-highlight">HTML</td>
+                    <td>Matemáticas</td>
+                    <td class="materia-highlight">HTML</td>
+                    <td>Matemáticas</td>
+                    <td class="materia-highlight">Programación</td>
+                </tr>
+                
+                <tr class="receso-row">
+                    <td>10:00 - 10:30</td>
+                    <td colspan="5">☕ RECESO ☕</td>
+                </tr>
 
-        <tr>
-            <td>07:00 - 08:00</td>
-            <td>Matemáticas</td>
-            <td>Programación</td>
-            <td>Matemáticas</td>
-            <td>Programación</td>
-            <td>Inglés</td>
-        </tr>
-
-        <tr>
-            <td>08:00 - 09:00</td>
-            <td>Física</td>
-            <td>Base de Datos</td>
-            <td>Física</td>
-            <td>Base de Datos</td>
-            <td>Historia</td>
-        </tr>
-
-        <tr>
-            <td>09:00 - 10:00</td>
-            <td>HTML</td>
-            <td>Matemáticas</td>
-            <td>HTML</td>
-            <td>Matemáticas</td>
-            <td>Programación</td>
-        </tr>
-
-        <tr>
-            <td>10:00 - 10:30</td>
-            <td colspan="5" align="center">RECESO</td>
-        </tr>
-
-        <tr>
-            <td>10:30 - 11:30</td>
-            <td>Inglés</td>
-            <td>Física</td>
-            <td>Inglés</td>
-            <td>Física</td>
-            <td>HTML</td>
-        </tr>
-
-        <tr>
-            <td>11:30 - 12:30</td>
-            <td>Base de Datos</td>
-            <td>Historia</td>
-            <td>Base de Datos</td>
-            <td>Historia</td>
-            <td>Matemáticas</td>
-        </tr>
-
-        <tr>
-            <td>12:30 - 13:30</td>
-            <td>Programación</td>
-            <td>Inglés</td>
-            <td>Programación</td>
-            <td>Inglés</td>
-            <td>Física</td>
-        </tr>
-
-        <tr>
-            <td>13:30 - 14:30</td>
-            <td>Tutoría</td>
-            <td>Proyecto</td>
-            <td>Tutoría</td>
-            <td>Proyecto</td>
-            <td>Deportes</td>
-        </tr>
-    </table>
+                <tr>
+                    <td>10:30 - 11:30</td>
+                    <td>Inglés</td>
+                    <td>Física</td>
+                    <td>Inglés</td>
+                    <td>Física</td>
+                    <td class="materia-highlight">HTML</td>
+                </tr>
+                <tr>
+                    <td>11:30 - 12:30</td>
+                    <td>Base de Datos</td>
+                    <td>Historia</td>
+                    <td>Base de Datos</td>
+                    <td>Historia</td>
+                    <td>Matemáticas</td>
+                </tr>
+                <tr>
+                    <td>12:30 - 13:30</td>
+                    <td class="materia-highlight">Programación</td>
+                    <td>Inglés</td>
+                    <td class="materia-highlight">Programación</td>
+                    <td>Inglés</td>
+                    <td>Física</td>
+                </tr>
+                <tr>
+                    <td>13:30 - 14:30</td>
+                    <td>Tutoría</td>
+                    <td>Proyecto</td>
+                    <td>Tutoría</td>
+                    <td>Proyecto</td>
+                    <td style="color: #e11d48; font-weight: 500;">Deportes</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 
 </body>
 </html>

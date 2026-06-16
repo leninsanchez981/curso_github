@@ -13,3 +13,7 @@ También me gustaría tener estabilidad económica, ayudar a mi familia y cumpli
 Uno de mis principales objetivos es continuar creciendo tanto profesional como personalmente. Espero desarrollar nuevas habilidades, enfrentar nuevos desafíos y convertirme en una mejor versión de mí mismo.
 
 **Creo que el esfuerzo y la dedicación de hoy serán la base de mi futuro.**
+
+
+# RESPUESTA 
+**Bien ahi, sigue esforzandote y lo lograras**
